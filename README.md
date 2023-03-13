@@ -19,3 +19,4 @@ T O - B E - U P D A T E D
 * Make all settings into the main script file for the php scripts.
 * Check if there is actually an update before alrerting everyone that the server is going down for an update    
     Rather than announcing an update every time you run it (E.g if you use it as a way to reboot normally but update check too)
+* Figure out how GitHub Actions work to make ZIP releases.
