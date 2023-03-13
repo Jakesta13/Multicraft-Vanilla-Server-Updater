@@ -1,10 +1,9 @@
 #!/bin/bash
 ## Script is to automate updates for multicraft.
-## This is also the restart script for the snapshot server.
 ### Settings ###
 # Dir
 dir="/home/minecraft/multicraft/scripts/"
-jarDir="/home/multicraft/servers/serverxyz/path/to/serverJar"
+jarDir="/home/multicraft/servers/server#XYZ/path/to/serverJar"
 # Server Jar name, usually just server.jar - but also depends on your Multicraft Setup.
 serverJar="server.jar"
 # Also add a check to make sure the jar filename has a '.jar' in it, and add it if not.
@@ -23,13 +22,15 @@ mcport=25565
 ### ### Message Settings ### ###
 # Tellraw Announcement colour? That's Color in one part of the world.
 rawColour="dark_purple"
+# Tellraw Announcement Message
+rawMessage="Server restart has begun!"
 # Kick Message
 kickMessage="Server is restarting. If there's a new version you should update your client."
 
 ### ###
 # Let everyone know there is a update occuring
 # THOUGH also I should check if there is actually an update before doing all this, rather to just restart normally instead of being a bit too flashy if it's a normal update.
-"${dir}/mcrcon" -H "${IP}" -P "${PORT}" -p "${PASS}" 'tellraw @a {"text":"*** Server restart has begun! ***","color":"'"'${rawColour}'"'"}'
+"${dir}/mcrcon" -H "${IP}" -P "${PORT}" -p "${PASS}" 'tellraw @a {"text":"*** ${rawMessage} ***","color":"'"'${rawColour}'"'"}'
 sleep 1
 # Stop Server
 echo "Stopping server!"
